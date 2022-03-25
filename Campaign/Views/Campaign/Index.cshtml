@@ -1,0 +1,69 @@
+﻿@model System.Collections.Generic.IEnumerable<Campaign.Entities.CampaignEntity>
+
+<div class="col-md-12">
+    <h1>Campaigns</h1>
+    <table class="table table-hover" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Keywords)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BidAmonut)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignFund)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Town)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Radius)
+                </th>
+                <th>
+                    Options
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CampaignName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Keywords)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidAmonut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CampaignFund)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Town)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Radius)
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.CampaignId" class="text-success">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.CampaignId" class="text-danger ml-1" onclick="return confirm('are you sure you want to delete the campaign?')">Delete</a>
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

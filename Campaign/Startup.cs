@@ -1,4 +1,5 @@
 using Campaign.Data;
+using Campaign.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,8 +26,11 @@ namespace Campaign
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContenxt>(options => options.UseSqlServer(Configuration.GetConnectionString("Application")));
+
+            services.AddTransient<ICampaignService, CampaignService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

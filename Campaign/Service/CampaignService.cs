@@ -59,13 +59,13 @@ namespace Campaign.Service
             var campaign = await _dbContext.Campaigns.FirstOrDefaultAsync(d => d.CampaignId == campaignModel.CampaignId);
             if (campaign != null)
             {
-                campaign.CampaignName = campaignModel.CampaignName,
-                campaign.Keywords = campaignModel.Keywords,
-                campaign.BidAmonut = campaignModel.BidAmonut,
-                campaign.CampaignFund = campaignModel.CampaignFund,
-                campaign.Status = campaignModel.Status,
-                campaign.Town = campaignModel.Town,
-                campaign.Radius = campaignModel.Radius
+                campaign.CampaignName = campaignModel.CampaignName;
+                campaign.Keywords = campaignModel.Keywords;
+                campaign.BidAmonut = campaignModel.BidAmonut;
+                campaign.CampaignFund = campaignModel.CampaignFund;
+                campaign.Status = campaignModel.Status;
+                campaign.Town = campaignModel.Town;
+                campaign.Radius = campaignModel.Radius;
             }
             await _dbContext.SaveChangesAsync();
         }
