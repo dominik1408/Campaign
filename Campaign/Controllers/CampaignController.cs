@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Campaign.Controllers
 {
-    [Authorize]
     public class CampaignController : Controller
     {
         private readonly ICampaignService _service;
